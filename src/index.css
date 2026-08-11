@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1e293b;
+  background: #eceae4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #e7e4dc;
+  background-image:
+    /* Grid de pontos sutil */
+    radial-gradient(circle, rgba(19,60,36,0.06) 1px, transparent 1px),
+    /* Brilho verde floresta — canto superior esquerdo */
+    radial-gradient(ellipse at 5% 15%, rgba(19,60,36,0.09) 0%, transparent 55%),
+    /* Brilho dourado — canto inferior direito */
+    radial-gradient(ellipse at 92% 85%, rgba(245,166,35,0.07) 0%, transparent 50%),
+    /* Brilho verde suave — centro-direita */
+    radial-gradient(ellipse at 75% 40%, rgba(19,60,36,0.04) 0%, transparent 45%),
+    /* Gradiente base quente */
+    linear-gradient(170deg, #e2dfd6 0%, #e7e4dc 35%, #eae8e1 65%, #eeebe4 100%);
+  background-size:
+    24px 24px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-attachment: fixed;
+}
+
+body::selection {
+  background: rgba(22, 101, 52, 0.15);
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Linha decorativa sutil no topo (transição do header) */
+#root::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(19,60,36,0.03) 0%, transparent 30%),
+    linear-gradient(0deg, rgba(19,60,36,0.02) 0%, transparent 15%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8e6df;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  border: 2px solid #e8e6df;
+  background: #b8c4b0;
+}
+
+/* ── Glassmorphism Card ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: none;
+  box-shadow:
+    0 1px 3px rgba(19, 60, 36, 0.04),
+    0 4px 16px rgba(19, 60, 36, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 2px 6px rgba(19, 60, 36, 0.06),
+    0 8px 24px rgba(19, 60, 36, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
